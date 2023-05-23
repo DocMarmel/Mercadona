@@ -13,6 +13,7 @@ public class Product {
     private String label;
     private String description;
     private double price;
+    // Colonne image en attente
 //    private String image;
     private String category;
     private boolean promotion;

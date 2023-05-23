@@ -1,3 +1,5 @@
+// Fichier pour la sécurité
+
 //package com.example.mercadona;
 //
 //import org.springframework.context.annotation.Bean;
