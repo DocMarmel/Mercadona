@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Mercadona - Détails du produit</title>
+</head>
+<body>
+<h1>Détails du produit</h1>
+
+<h2>Nom :</h2>
+<p th:text="${product.name}"></p>
+
+<h2>Description :</h2>
+<p th:text="${product.description}"></p>
+
+<h2>Prix :</h2>
+<p th:text="${product.price}"></p>
+
+<a th:href="@{/promotion/add?id=${product.id}}">Ajouter une promotion</a>
+</body>
+</html>

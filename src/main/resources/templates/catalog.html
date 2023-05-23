@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mercadona - Catalogue</title>
+    </head>
+    <style>
+        .promo {
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+    <body>
+        <h1>Catalogue des promotions</h1>
+
+        <h2>Liste des produits</h2>
+
+<!--        Filtre par catégories -->
+<!--        <form th:action="@{/catalog/{category}(category=${category})}" method="get">-->
+<!--            <label for="categoryFilter">Filtrer par catégorie:</label>-->
+<!--            <select id="categoryFilter" name="category">-->
+<!--                <option value="">Toutes les catégories</option>-->
+<!--                <option th:each="category : ${categories}" th:value="${category}" th:text="${category}"></option>-->
+<!--            </select>-->
+<!--            <input type="submit" value="Appliquer">-->
+<!--        </form>-->
+
+        <table>
+            <thead>
+            <tr>
+                <th>Nom du produit</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Catégorie</th>
+                <th>Promotion</th>
+                <th>Date de début de promotion</th>
+                <th>Date de fin de promotion</th>
+                <th>Pourcentage de remise</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.label}" />
+                    <td th:text="${product.description}" />
+                    <td th:text="${product.promotion ? (product.price - (product.price * (product.discountPercentage ?: 0) / 100)) + '€' : product.price + '€'}"
+                        th:class="${product.promotion ? 'promo' : ''}"/>
+                    <td th:text="${product.category}" />
+                    <td th:text="${product.promotion ? 'Oui' : 'Non'}" />
+                    <td th:text="${product.startDatePromo != null ? product.startDatePromo : 'Pas de promotion'}" />
+                    <td th:text="${product.endDatePromo != null ? product.endDatePromo : 'Pas de promotion'}" />
+                    <td th:text="${(product.discountPercentage == null || product.discountPercentage == 0) ? 'Pas de promotion' : product.discountPercentage + '%'}" />
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

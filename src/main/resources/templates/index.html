@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mercadona - Accueil</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/catalog">Catalogue</a></li>
+                <li th:if="${authentication != null}"><a href="/login">Connexion</a></li>
+                <li th:if="${authentication != null}"><a href="/logout">Déconnexion</a></li>
+                <li th:if="${authentication != null}"><a href="/register">Inscription</a></li>
+                <li th:if="${authentication != null}"><a href="/dashboard">Tableau de bord</a></li>
+            </ul>
+        </nav>
+
+        <h1>Bienvenue sur Mercadona !</h1>
+
+        <h3>Présentation de Mercadona</h3>
+        <p>Mercadona, célèbre entreprise dans le milieu du retail dispose de 1675 magasins en Espagne
+            réalisant ainsi un chiffre d’affaires de 20 milliards d’euros. Son succès se dessine à travers des
+            promotions très fréquentes, il y a toujours un minimum d’une centaine de produits en
+            promotion et à tout moment de l’année.</p>
+
+    </body>
+</html>
