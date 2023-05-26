@@ -9,22 +9,24 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "lastname")
     private String lastName;
+    @Column(name = "firstname")
     private String firstName;
     private String password;
     @Column(unique = true)
-    private String mail;
+    private String email;
 
     public User() {
 
     }
 
-    public User(int id, String lastName, String firstName, String password, String mail) {
+    public User(int id, String lastName, String firstName, String password, String email) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
         this.password = password;
-        this.mail = mail;
+        this.email = email;
     }
 
     public int getId() {
@@ -67,12 +69,12 @@ public class User {
         this.password = password;
     }
 
-    public String getMail() {
-        return mail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMail(String mail) {
+    public void setEmail(String email) {
 
-        this.mail = mail;
+        this.email = email;
     }
 }

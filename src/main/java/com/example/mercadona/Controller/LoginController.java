@@ -23,10 +23,10 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String loginUser(@RequestParam("mail") String mail,
+    public String loginUser(@RequestParam("email") String email,
                                     @RequestParam("password") String password) {
 
-        User user = userRepository.findByMail(mail);
+        User user = userRepository.findByEmail(email);
 
         PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 

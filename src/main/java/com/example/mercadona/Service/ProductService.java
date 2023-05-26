@@ -2,11 +2,9 @@ package com.example.mercadona.Service;
 
 import com.example.mercadona.Product;
 import com.example.mercadona.Repository.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ProductService {

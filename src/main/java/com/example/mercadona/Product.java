@@ -17,8 +17,11 @@ public class Product {
 //    private String image;
     private String category;
     private boolean promotion;
+    @Column(name = "startdatepromo")
     private Timestamp startDatePromo;
+    @Column(name = "enddatepromo")
     private Timestamp endDatePromo;
+    @Column(name = "discountpercentage")
     private Integer discountPercentage;
 
 

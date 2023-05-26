@@ -29,7 +29,7 @@ public class RegisterController {
     @PostMapping("/register")
     public String createUser(@RequestParam("lastName") String lastName,
                                @RequestParam("firstName") String firstName,
-                               @RequestParam("mail") String mail,
+                               @RequestParam("email") String email,
                                @RequestParam("password") String password) {
 
         String encodedPassword = passwordEncoder.encode(password);
@@ -38,17 +38,11 @@ public class RegisterController {
         User user = new User();
         user.setLastName(lastName);
         user.setFirstName(firstName);
-        user.setMail(mail);
+        user.setEmail(email);
         user.setPassword(encodedPassword);
 
         userRepository.save(user);
 
-        return "redirect:/confirmation";
-    }
-
-    @GetMapping("/confirmation")
-    public String displayConfirmationPage() {
-
-        return "confirmation";
+        return "redirect:/dashboard";
     }
 }
