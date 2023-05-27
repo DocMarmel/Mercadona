@@ -14,7 +14,13 @@
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="password" required />
 
+            <input type="checkbox" id="rememberMe" name="rememberMe" />
+            <label for="rememberMe">Se souvenir de moi</label>
+
             <button type="submit">Se connecter</button>
         </form>
+
+        <a th:href="@{/register}">Inscription</a>
+        <a href="#">Mot de passe oublié</a>
     </body>
 </html>
